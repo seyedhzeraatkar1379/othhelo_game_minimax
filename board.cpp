@@ -188,7 +188,7 @@ vector<mokhtasat> board::cellCanUse(int pid)
             if(isValidMove(boardArr,i,j,pid))
             {
                 mokhtasat m(i,j);
-                cout<<"mokhi: "<<i<<"mokhj: "<<j<<endl;
+                cout<<"Mokhtasat_i: "<<i<<"Mokhtasat_j: "<<j<<endl;
                 listDecision.push_back(m);
             }
         }

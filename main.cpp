@@ -1,16 +1,13 @@
-#include <QCoreApplication>
 #include "board.h"
-#include <QDebug>
 #include <unistd.h>
 
-int main(int argc, char *argv[])
+int main()
 {
-    QCoreApplication a(argc, argv);
     char color,colorvs='b';
-    qDebug()<<"hello!";
+    cout<<"hello!";
     do
     {
-        qDebug()<<"select color: w  or  b:";
+        cout<<"select color: w  or  b:";
         cin >> color;
     }while(!(color == 'w' || color == 'b'));
     if(color == 'b')
@@ -24,9 +21,9 @@ int main(int argc, char *argv[])
         if(if1 > 0)
         {
             b->showBoard(color,colorvs);
-            qDebug()<<"enter x:";
+            cout<<"enter x:";
             cin>>x;
-            qDebug()<<"enter y:";
+            cout<<"enter y:";
             cin>>y;
             if(x<0 || y<0 || x>b->getsize() || y>b->getsize())
                 continue;
@@ -44,13 +41,13 @@ int main(int argc, char *argv[])
     }
     int user = b->scorecalc(1);
     int AI = b->scorecalc(2);
-    qDebug()<<"your score";
-    qDebug()<<user;
-    qDebug()<<"AI Score";
-    qDebug()<<AI;
+    cout<<"your score";
+    cout<<user;
+    cout<<"AI Score";
+    cout<<AI;
     if(user > AI)
-        qDebug()<<"You Win!";
+        cout<<"You Win!";
     else
-        qDebug()<<"You Lose!";
-    return a.exec();
+        cout<<"You Lose!";
+    return 0;
 }
